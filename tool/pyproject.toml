@@ -1,0 +1,19 @@
+[build-system]
+requires = ["hatchling>=1.27"]
+build-backend = "hatchling.build"
+
+[project]
+name = "power-deck-tools"
+version = "0.1.0"
+description = "UDP receiver, desktop dashboard, and capture tools for Power Deck"
+readme = "GUI_README.md"
+requires-python = ">=3.10"
+dependencies = []
+
+[project.scripts]
+deck-receiver = "power_deck_tool.deck_receiver:main"
+deck-gui = "power_deck_tool.deck_gui:main"
+power-receiver = "power_deck_tool.power_receiver:main"
+
+[tool.hatch.build.targets.wheel]
+packages = ["src/power_deck_tool"]
